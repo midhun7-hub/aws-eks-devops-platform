@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-cli
+  namespace: irsa-demo
+spec:
+  serviceAccountName: dynamodb-sa
+  containers:
+  - name: aws-cli
+    image: amazon/aws-cli
+    command: ["sleep", "3600"]
+  restartPolicy: Never
