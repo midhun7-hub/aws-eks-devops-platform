@@ -3,9 +3,15 @@
 *.tfstate
 *.tfstate.*
 crash.log
-
-# Terraform variables
 *.tfvars
+
+# Node.js
+**/node_modules/
+npm-debug.log*
+
+# Environment files
+.env
+.env.*
 
 # IDE
 .vscode/
