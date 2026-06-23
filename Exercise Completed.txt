@@ -1,0 +1,6 @@
+16.Build a Production EKS Platform
+17.Implement IRSA for Application Access
+24.DynamoDB Application Deployment
+2.IAM / IRSA Failure
+20.External Secrets Integration
+4.External Secrets Failure
