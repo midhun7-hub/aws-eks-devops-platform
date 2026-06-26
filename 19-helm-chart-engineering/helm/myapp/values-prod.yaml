@@ -1,0 +1,16 @@
+replicaCount: 4
+
+config:
+  APP_ENV: prod
+
+resources:
+  requests:
+    cpu: "500m"
+    memory: "512Mi"
+  limits:
+    cpu: "1000m"
+    memory: "1Gi"
+
+autoscaling:
+  minReplicas: 4
+  maxReplicas: 10

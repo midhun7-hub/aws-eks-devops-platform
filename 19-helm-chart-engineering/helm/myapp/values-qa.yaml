@@ -1,0 +1,12 @@
+replicaCount: 2
+
+config:
+  APP_ENV: qa
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "256Mi"
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
