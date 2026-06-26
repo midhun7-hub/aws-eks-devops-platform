@@ -1,0 +1,38 @@
+replicaCount: 2
+
+image:
+  repository: nginx
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+config:
+  APP_NAME: payment-service
+  APP_ENV: dev
+
+secret:
+  DB_USERNAME: admin
+  DB_PASSWORD: password123
+
+ingress:
+  enabled: true
+  className: nginx
+  host: myapp.local
+  path: /
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
