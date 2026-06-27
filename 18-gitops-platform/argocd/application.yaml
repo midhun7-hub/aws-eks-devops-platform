@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: payment-service
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/midhun7-hub/aws-eks-devops-platform.git
+    targetRevision: main
+    path: 18-gitops-platform/gitops/dev
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
