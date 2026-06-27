@@ -4,3 +4,8 @@
 2.IAM / IRSA Failure
 20.External Secrets Integration
 4.External Secrets Failure
+13.Secret Rotation Outage
+19.Helm Chart Engineering
+5.Helm Upgrade Failure
+18.GitOps Platform Using ArgoCD
+1.EKS Application Deployment via GitOps
