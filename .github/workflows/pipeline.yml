@@ -12,7 +12,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: 3-cicd-pipeline/app
+        working-directory: app
 
     steps:
 
