@@ -1,0 +1,20 @@
+replicaCount: 2
+
+image:
+  repository: 191072690914.dkr.ecr.ap-south-1.amazonaws.com/payment-service
+  tag: latest
+  pullPolicy: latest
+
+service:
+  type: ClusterIP
+  port: 3000
+
+resources: {}
+
+imagePullSecrets: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
