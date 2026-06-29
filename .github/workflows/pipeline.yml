@@ -71,7 +71,7 @@ jobs:
 
       - name: Update Helm Image Tag
         run: |
-          sed -i "s/tag:.*/tag: ${{ github.sha }}/" 23-cicd-pipeline/helm/payment-service/values.yaml
+         sed -i "s/tag:.*/tag: ${{ github.sha }}/" \helm/payment-service/values.yaml
 
       - name: Commit Helm Changes
         run: |
