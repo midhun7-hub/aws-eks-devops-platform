@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: network-test
+  namespace: payment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: network-test
+
+  template:
+    metadata:
+      labels:
+        app: network-test
+
+    spec:
+      containers:
+      - name: curl
+
+        image: curlimages/curl:latest
+
+        command:
+        - sleep
+
+        args:
+        - "36000"
