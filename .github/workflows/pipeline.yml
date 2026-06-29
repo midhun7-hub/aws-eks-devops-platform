@@ -64,7 +64,7 @@ jobs:
           docker push \
           ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/payment-service:${{ github.sha }}
 
-            - name: Configure Git
+      - name: Configure Git
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
