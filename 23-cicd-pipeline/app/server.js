@@ -12,7 +12,7 @@ app.get("/health", (req, res) => {
 
 app.get("/payment", (req, res) => {
     res.status(200).json({
-        message: "Payment Service Running"
+        message: "Payment Service Running v2"
     });
 });
 

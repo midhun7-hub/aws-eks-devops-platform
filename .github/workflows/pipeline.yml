@@ -42,6 +42,7 @@ jobs:
           exit-code: 0
           ignore-unfixed: true
           severity: HIGH,CRITICAL
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -62,3 +63,23 @@ jobs:
         run: |
           docker push \
           ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/payment-service:${{ github.sha }}
+
+            - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Update Helm Image Tag
+        run: |
+          sed -i "s/tag:.*/tag: ${{ github.sha }}/" 23-cicd-pipeline/helm/payment-service/values.yaml
+
+      - name: Commit Helm Changes
+        run: |
+          git add 23-cicd-pipeline/helm/payment-service/values.yaml
+          git diff --cached --quiet || git commit -m "Update image tag to ${{ github.sha }}"
+
+      - name: Push Helm Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
