@@ -1,0 +1,3 @@
+Warning  Target registration failed
+Warning  FailedBuildModel
+Warning  FailedDeployModel
