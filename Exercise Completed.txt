@@ -9,3 +9,9 @@
 5.Helm Upgrade Failure
 18.GitOps Platform Using ArgoCD
 1.EKS Application Deployment via GitOps
+23.Build CI/CD Pipeline
+3.ArgoCD OutOfSync Production Incident
+21.Production ALB Ingress Setup
+7.ALB Ingress Failure
+8.Egress Restriction Incident
+22.Horizontal and Cluster Autoscaling

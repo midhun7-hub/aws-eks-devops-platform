@@ -185,6 +185,26 @@ app.post("/payment", (req, res) => {
     });
 });
 
+// ================= CPU Intensive Endpoint =================
+
+app.get("/cpu", (req, res) => {
+
+    let result = 0;
+
+    // Heavy CPU work
+    for (let i = 0; i < 500000000; i++) {
+        result += Math.sqrt(i);
+    }
+
+    res.status(200).json({
+        message: "CPU intensive task completed",
+        result: result
+    });
+
+});
+
+// ===========================================================
+
 app.listen(PORT, () => {
     console.log(`Payment Service running on port ${PORT}`);
 });
