@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-log-demo
+  namespace: payment
+spec:
+  restartPolicy: Never
+  containers:
+  - name: app
+    image: busybox
+    command:
+      - sh
+      - -c
+      - |
+        echo "Connecting to Redis..."
+        sleep 2
+        echo "ERROR Cannot connect to Redis"
+        echo "Redis authentication failed"
+        sleep 3600
