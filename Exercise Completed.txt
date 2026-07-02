@@ -15,3 +15,23 @@
 7.ALB Ingress Failure
 8.Egress Restriction Incident
 22.Horizontal and Cluster Autoscaling
+6.EKS Node Scale Failure
+25.Observability Platform Deployment
+9.Prometheus Monitoring Failure
+10.Loki Logging Failure
+14.Distributed Tracing Investigation
+11.CrashLoopBackOff Investigation
+12.Node NotReady Production Incident
+15.Complete Production Outage
+26.S3 Backup Solution
+
+16
+17 → 24 → 2
+20 → 4 → 13
+19 → 5
+18 → 1 → 23 → 3
+21 → 7 → 8
+22 → 6
+25 → 9 → 10 → 14
+11 → 12 → 15
+26
